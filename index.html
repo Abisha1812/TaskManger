@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          🌙
+        </button>
+        <h1>Task Manager</h1>
+        <p>Stay organized and productive with your personal task manager</p>
+
+        <div class="stats">
+          <div class="stat-card">
+            <span class="stat-number" id="totalTasks">0</span>
+            <span class="stat-label">Total</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="completedTasks">0</span>
+            <span class="stat-label">Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="pendingTasks">0</span>
+            <span class="stat-label">Pending</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="task-input-section">
+          <div class="input-group">
+            <div class="input-row">
+              <input
+                type="text"
+                id="taskInput"
+                class="task-input"
+                placeholder="What needs to be done?"
+                aria-label="Task name"
+              />
+              <button class="add-btn" id="addTaskBtn">Add Task</button>
+            </div>
+            <div class="input-row">
+              <input
+                type="date"
+                id="dueDateInput"
+                class="date-input"
+                aria-label="Due date"
+              />
+              <select
+                id="prioritySelect"
+                class="priority-select"
+                aria-label="Priority level"
+              >
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All Tasks</button>
+          <button class="filter-btn" data-filter="pending">Pending</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <div class="task-list" id="taskList">
+          <div class="empty-state" id="emptyState">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+              />
+            </svg>
+            <h3>No tasks yet</h3>
+            <p>Add your first task to get started!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
